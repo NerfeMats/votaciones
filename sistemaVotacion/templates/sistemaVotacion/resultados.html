@@ -1,0 +1,47 @@
+{% extends "sistemaVotacion/base.html" %}
+
+
+{% block contenido %}<h1>Resultados</h1>
+
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      width: 50%;}
+</style>
+
+
+<table >
+    
+    <tr>
+        <th>Logo</th>
+        <th>Partido Politico</th>
+        <th>Cantidad de Votos</th> 
+        
+      </tr>
+  
+    {% for p in partidospoliticos  %}
+    <tr>
+        <th><img src="{{p.partidopolitico.logo.url}}" alt="" width="50" height="50"></th>
+        <th>{{p.partidopolitico.nombrePP}}</th>
+        <!-- <th><button action="{#% url 'botonvotar' p.id %#}" type="button" >Votar</button></th> -->
+        <th>{{p.numerodevotos}}</th>
+
+    </tr>
+
+{% endfor %}
+</table>
+
+<script>
+
+ alert('tu voto se ha registrado')
+  
+  history.pushState(null, null, window.location.href);
+history.back();
+window.onpopstate = () => history.forward();
+ 
+</script>
+
+
+
+{% endblock contenido %}

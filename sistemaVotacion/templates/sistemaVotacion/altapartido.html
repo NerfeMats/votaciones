@@ -1,0 +1,10 @@
+{% extends 'sistemaVotacion/base.html' %}
+{% block contenido %}
+<h1>Alta de Partido Politico</h1>
+  <p>Partido Político</p>
+  <form method="POST" action="" enctype="multipart/form-data"> {% csrf_token %}
+    {{form.as_p}}
+
+    <button type="submit" class="btn btn-primary">Registrar</button>
+  </form>
+{% endblock contenido %}  

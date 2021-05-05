@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Votaciones, México 2021</title>
+</head>
+<body>
+    <p>Votaciones, México 2021</p>
+    <a href="{% url 'presentacion' %}">Presentacion</a>
+    <a href="{% url 'altapartido' %}">Dar de alta</a>
+    <a href="{% url 'listarpartidos' %}">Listar Partidos Registrados</a>
+    <a href="{% url 'votar' %}">Votar</a>
+    <a href="{% url 'resultados' %}">Ver Resultados</a>
+    {%block contenido%}
+
+    {% endblock%}
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends "sistemaVotacion/base.html" %}
+{% load static %}
+{% block contenido %}
+<h1>Lista de Partidos Politicos Registrados</h1>
+
+{% for p in partidospoliticos  %}
+<p>Partido Politico</p>
+{{p.nombrePP}}
+
+<img src=  {{p.logo.url}}  alt="" width="100" height="100">
+<hr>
+{% empty %}
+<p>No hay partidos politicos registrados</p>
+  
+{% endfor %}
+    
+
+{% endblock contenido %}

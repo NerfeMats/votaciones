@@ -1,0 +1,17 @@
+{% extends 'sistemaVotacion/base.html' %}
+
+{% block contenido %}
+<h1>Aquí podra votar</h1>
+  
+
+
+<p>Ingrese su correo</p>
+
+<form method="POST">{% csrf_token %}
+
+  {{form.as_p}}
+  <button type="submit">Registrar correo</button>
+</form>
+
+
+{% endblock contenido %}

@@ -1,0 +1,45 @@
+{% extends "sistemaVotacion/base.html" %}
+
+
+{% block contenido %}<h1>Urna</h1>
+
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      width: 50%;}
+</style>
+
+
+<table >
+    
+    <tr>
+        <th>Logo</th>
+        <th>Partido Politico</th>
+        <th>Votar</th> 
+        
+      </tr>
+   
+    {% for p in partidospoliticos  %}
+    <tr>
+        <th><img src="{{p.logo.url}}" alt="" width="50" height="50"></th>
+        <th>{{p.nombrePP}}</th>
+        <!-- <th><button action="{#% url 'botonvotar' p.id %#}" type="button" >Votar</button></th> -->
+        <th><a href="{% url 'botonvotar' p.id %}" >Votar</a></th>
+
+    </tr>
+{% empty %}
+<p>No hay partidos politicos registrados</p>
+{% endfor %}
+</table>
+
+
+
+
+  
+
+
+
+
+
+{% endblock contenido %}<h1>Urna</h1>
